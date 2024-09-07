@@ -60,9 +60,9 @@ export default function TextForm(props) {
 
             <h1>Your text summary</h1>
             <p>{text.split(" ").filter(word=>word.trim()!='').length} words, {text.length} characters</p>
-            <p>{ 0.008 * text.split(" ").length} Minutes to read</p>
-            <p>{text.split('.').length} Sentences</p>
-            <p>{text.split('\n').length} Paragrahs</p>
+            <p>{text.split(" ").filter(word=>word.trim()!='').length>0? 0.008 * text.split(" ").length:0} Minutes to read</p>
+            <p>{text.split('.').filter(word=>word.trim()!='').length} Sentences</p>
+            <p>{text.split('\n').filter(word=>word.trim()!='').length} Paragrahs</p>
             <h2>Preview</h2>
             <p>{text.length>0?text:'Enter your text in box to preview'}</p>
         </div>
